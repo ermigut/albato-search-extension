@@ -473,7 +473,6 @@
           onmouseleave="this.style.background=''"
         >
           <div style="display:flex;align-items:center;gap:6px;">
-            <span style="font-size:11px;color:#667085;min-width:28px;">${v.minorId}</span>
             <span style="font-size:12px;color:#344054;flex:1;
                          white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
               ${esc(v.name || '—')}
@@ -491,7 +490,7 @@
               onmouseleave="this.style.background='#fef2f2';this.style.color='#f87171';this.style.borderColor='#fecaca'"
               title="Delete version">🗑 Delete</button>` : ''}
           </div>
-          <div style="font-size:10px;color:#aaa;margin-top:1px;padding-left:34px;">${date}</div>
+          <div style="font-size:10px;color:#aaa;margin-top:1px;">ID: ${v.id}${date ? ` · ${date}` : ''}</div>
         </div>`;
     }).join('');
 
