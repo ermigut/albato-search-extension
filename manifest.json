@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Albato Apps Search",
+  "version": "1.0.0",
+  "description": "Search across all apps in Albato sidebar without pagination",
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.albato.ru/*",
+    "*://*.albato.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://new.albato.ru/*",
+        "*://*.albato.ru/*",
+        "*://*.albato.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["*://*.albato.ru/*", "*://*.albato.com/*"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
