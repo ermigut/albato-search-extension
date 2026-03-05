@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Open this file in browser, then right-click each canvas and save as PNG into icons/ folder -->
+<html>
+<body style="background:#eee;padding:20px;font-family:sans-serif">
+<h3>Right-click each canvas → Save image as → save into icons/ folder</h3>
+<p>icon16.png:</p>
+<canvas id="c16" width="16" height="16"></canvas>
+<p>icon48.png:</p>
+<canvas id="c48" width="48" height="48"></canvas>
+<p>icon128.png:</p>
+<canvas id="c128" width="128" height="128"></canvas>
+<script>
+  function draw(id, size) {
+    const c = document.getElementById(id);
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = '#f5601d';
+    ctx.beginPath();
+    ctx.roundRect(0, 0, size, size, size * 0.18);
+    ctx.fill();
+    ctx.fillStyle = '#fff';
+    ctx.font = `bold ${size * 0.55}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('A', size / 2, size / 2);
+  }
+  draw('c16', 16);
+  draw('c48', 48);
+  draw('c128', 128);
+</script>
+</body>
+</html>
